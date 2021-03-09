@@ -1,5 +1,479 @@
-.App {
-  margin: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
-  color: blue;
+.main {
+  padding: 0;
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: "Noto Sans TC", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.container-inner {
+  max-width: 1920px;
+}
+
+.landing-page {
+  height: 720px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top 0px center;
+}
+
+.background-img {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url("https://assets.nflxext.com/ffe/siteui/vlv3/70deccb9-9b6c-4be1-b781-18dd1bcd9264/a93a2375-2806-4957-8019-f0794907230f/TW-zh-20210301-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+}
+
+.background-img-eng {
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url("https://assets.nflxext.com/ffe/siteui/vlv3/70deccb9-9b6c-4be1-b781-18dd1bcd9264/a93a2375-2806-4957-8019-f0794907230f/TW-en-20210301-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+}
+
+#logo {
+  width: 10rem;
+  z-index: 1;
+}
+
+.btn-login-cht {
+  width: 3.5rem;
+  height: 2.25rem;
+  background-color: #e50914;
+  color: white;
+  border: 0;
+  border-radius: 3px;
+  font-size: 1.2em;
+}
+
+.btn-login-eng {
+  width: 5rem;
+  height: 2.25rem;
+  background-color: #e50914;
+  color: white;
+  border: 0;
+  border-radius: 3px;
+  font-size: 1.2em;
+}
+
+.introduction {
+  line-height: 1.1;
+  max-width: 800px;
+}
+
+/* text style */
+.title {
+  font-size: 4em;
+}
+
+.sub-title {
+  font-size: 2.8em;
+}
+
+.text-content {
+  font-size: 1.8em;
+}
+
+.text-normal {
+  font-size: 1.2em;
+}
+
+.text-character {
+  font-size: 1.6em;
+}
+
+.download-title {
+  font-size: 1em;
+  line-height: 1rem;
+}
+
+.download-text {
+  font-size: 0.9em;
+  line-height: 1rem;
+  color: #007fff;
+}
+
+.contact-title {
+  font-size: 1em;
+  color: #999999;
+}
+
+.contact-text {
+  font-size: 0.8em;
+  color: #999999;
+  line-height: 2rem;
+}
+/* text style end*/
+
+.email {
+  width: 500px;
+  height: 70px;
+  vertical-align: middle;
+}
+
+.start {
+  width: 200px;
+  height: 70px;
+  font-size: 30px;
+  color: white;
+  background-color: #e50914;
+  border: 0;
+  border-color: #e50914;
+  vertical-align: middle;
+}
+
+/* section 2 */
+.features {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.frame {
+  position: relative;
+  min-width: 50%;
+  text-align: left;
+}
+
+.photo {
+  position: relative;
+  width: 100%;
+  z-index: 3;
+}
+
+#photo {
+  width: 100%;
+}
+
+/* play on tv */
+.video {
+  position: absolute;
+  top: 21%;
+  left: 14%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  max-width: 75%;
+}
+
+#video {
+  max-width: 100%;
+}
+
+/* Download shows */
+.downloading {
+  position: absolute;
+  top: 70%;
+  left: 20%;
+  width: 60%;
+  height: 25%;
+  z-index: 3;
+}
+
+.border-self {
+  border: solid #444444 2px;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+}
+
+.download-poster {
+  height: 4rem;
+}
+
+.download-photo {
+  height: 3rem;
+}
+
+/* Watch everywhere */
+.watch-everywhere {
+  position: absolute;
+  top: 11%;
+  left: 20%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  max-width: 59%;
+}
+
+#watch-video {
+  max-width: 100%;
+}
+
+/* Section3 QA */
+.qa-section {
+  width: 75%;
+  max-width: 850px;
+}
+
+.qa-background {
+  background-color: #303030;
+  color: #ffffff;
+}
+
+.qa-section button {
+  border: none;
+}
+
+.qa-text {
+  list-style-type: none;
+}
+
+.open {
+  max-height: 600px;
+  transition: max-height 0.2s ease-in;
+}
+
+.closed {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in;
+}
+
+.non-rotated {
+  transform: rotate(0);
+  transition: transform 0.2s linear;
+}
+
+.rotated {
+  transform: rotate(45deg);
+  transition: transform 0.2s linear;
+}
+
+.controller {
+  position: relative;
+  max-width: 50px;
+}
+
+/* contact */
+.container-contact {
+  max-width: 80%;
+}
+
+/* language */
+.select-box {
+  position: relative;
+}
+
+.select-box select {
+  width: 130px;
+  height: 50px;
+  background-color: black;
+  border: solid 1px #333333;
+  color: #999999;
+  font-size: 1em;
+  padding-left: 50px;
+  appearance: none;
+}
+
+.select-box::before {
+  position: absolute;
+  left: 15px;
+  top: 25px;
+  transform: translateY(-50%);
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900;
+  content: "\f0ac";
+  font-size: 1.1em;
+  color: #999999;  
+}
+
+.select-box::after {
+  position: absolute;
+  left: 100px;
+  top: 25px;
+  transform: translateY(-50%);
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900;
+  content: "\f0d7";
+  font-size: 1.8em;
+  color: #999999;  
+}
+
+
+@media only screen and (max-width: 1450px) {
+  #logo {
+    width: 8.5rem;
+  }
+
+  .btn-login-cht {
+    width: 3.2rem;
+    height: 2rem;
+    font-size: 1.1em;
+  }
+
+  .btn-login-eng {
+    width: 4.5rem;
+    height: 2rem;
+    font-size: 1.1em;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .frame {
+    min-width: 70%;
+  }
+
+  .features {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  #logo {
+    width: 6.75rem;
+  }
+
+  .btn-login-cht {
+    width: 2.8rem;
+    height: 1.6rem;
+    font-size: 0.9em;
+  }
+
+  .btn-login-eng {
+    width: 3.6rem;
+    height: 1.6rem;
+    font-size: 0.9em;
+  }
+
+  /* text style */
+  .title {
+    font-size: 2.6em;
+  }
+
+  .sub-title {
+    font-size: 2em;
+  }
+
+  .text-content {
+    font-size: 1.25em;
+  }
+
+  .text-normal {
+    font-size: 1.25em;
+  }
+
+  .text-character {
+    font-size: 1.3em;
+  }
+  /* text style end*/
+}
+
+@media only screen and (max-width: 768px) {
+  .email {
+    width: 90%;
+    height: 50px;
+    padding: 10px;
+    vertical-align: middle;
+  }
+
+  .start {
+    width: 110px;
+    height: 40px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #e50914;
+    border: 0;
+    border-color: #e50914;
+    vertical-align: middle;
+  }
+
+  .frame {
+    min-width: 80%;
+  }
+
+  .text-character {
+    font-size: 1.1em;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .landing-page {
+    max-height: 550px;
+  }
+
+  form {
+    max-width: 500px;
+  }
+
+  .frame {
+    min-width: 90%;
+  }
+
+  .downloading {
+    left: 15%;
+    width: 70%;
+  }
+
+  .download-poster {
+    height: 3rem;
+  }
+
+  .download-photo {
+    height: 2rem;
+  }
+
+  /* text style */
+  .title {
+    font-size: 1.8em;
+  }
+
+  .sub-title {
+    font-size: 1.5em;
+  }
+
+  .text-character {
+    font-size: 1em;
+  }
+
+  .download-title {
+    font-size: 0.9em;
+  }
+
+  .download-text {
+    font-size: 0.75em;
+  }
+  /* text style end*/
+
+  .qa-section {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .downloading {
+    left: 10%;
+    width: 80%;
+  }
+
+  .download-poster {
+    height: 2rem;
+  }
+
+  .download-photo {
+    height: 1.5rem;
+  }
+
+  .download-title {
+    font-size: 0.8em;
+  }
+
+  .download-text {
+    font-size: 0.65em;
+  }
 }
