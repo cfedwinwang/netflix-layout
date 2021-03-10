@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "./css/App.css";
 
 export default function APP() {
-  let topRef = useRef();
-
   const [openStatus, setOpenStatus] = useState([
     {
       id: 0,
@@ -87,14 +85,19 @@ export default function APP() {
     );
   }, [language]);
 
-  // console.log(language, qaContentLan);
+  const pressAlart = () => {
+    alert(
+      "本頁面為網頁切版demo\x0a使用Netflix服務請連結至: https://www.netflix.com/tw/"
+    );
+  };
 
   return (
     <div className="main container-fluid justify-content-center align-items-center text-center">
       {/* first part */}
       <div className={backgroundImage}>
         <div className="container-inner mx-auto">
-          <div className="row row-cols-2 justify-content-between align-items-start">
+          {/* header */}
+          <div className="row row-cols-3 justify-content-between align-items-start">
             <div className="col p-5 text-start">
               <img
                 className=""
@@ -102,19 +105,26 @@ export default function APP() {
                 src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
               />
             </div>
+
+            {/* login */}
             <div className="col p-5 text-end">
-              <button type="button" className={firstPage.class}>
+              <button
+                type="button"
+                className={firstPage.class}
+                onClick={() => pressAlart()}
+              >
                 {firstPage.login}
               </button>
             </div>
           </div>
+          {/* header end */}
           <div className="introduction row mx-auto">
             <div className="row">
               <b className="title mt-5 mb-4">{firstPage.title}</b>
               <p className="text-content mb-3">{firstPage.contents}</p>
             </div>
 
-            <Landing landingPage={landingPage} />
+            <Landing landingPage={landingPage} pressAlart={pressAlart} />
           </div>
         </div>
       </div>
@@ -248,12 +258,17 @@ export default function APP() {
       {/* third part Q&A end */}
 
       {/* forth part contact */}
-      <div className="container-lg w-75 mx-auto text-start my-5">
-        <p className="contact-title">{contactContentLan.title}</p>
+      <div className="container-lg w-75 mx-auto text-start mb-3 mt-5">
+        <div className="my-4">
+          <a className="contact-title" onClick={() => pressAlart()}>
+            {contactContentLan.title}
+          </a>
+        </div>
+
         <div className="row row-cols-2 row-cols-sm-3 row-cols-md-4 text-start">
           {contactContentLan.contents.map((item, index) => (
             <div className="col" key={index}>
-              <ContactPad item={item} />
+              <ContactPad item={item} pressAlart={pressAlart} />
             </div>
           ))}
         </div>
@@ -261,7 +276,7 @@ export default function APP() {
       {/* forth part contact end */}
 
       {/* language select */}
-      <div className="container-lg w-75 text-start">
+      <div className="container-lg w-75 text-start my-4">
         <div className="select-box row-3">
           <select onChange={(e) => handleChangeLan(e)}>
             <option value="zh">中文</option>
@@ -273,13 +288,25 @@ export default function APP() {
       {/* language select end */}
 
       {/* footer */}
-      <footer></footer>
+      <div className="container-lg w-75 mx-auto text-start">
+        <footer>
+          <p className="footer-text">
+            本頁面為網頁切版demo, 使用Netflix服務請連結至:{" "}
+            <a href="https://www.netflix.com/tw/">
+              https://www.netflix.com/tw/
+            </a>
+          </p>
+        </footer>
+        <br />
+        <br />
+      </div>
     </div>
   );
 }
 
 const Landing = (props) => {
   const landingPage = props.landingPage;
+  const pressAlart = props.pressAlart;
   return (
     <div>
       <div className="row px-3">
@@ -294,7 +321,7 @@ const Landing = (props) => {
             placeholder={landingPage.email}
             required
           ></input>
-          <button className="start">
+          <button className="start" onClick={() => pressAlart()}>
             {landingPage.start} <i className="fas fa-chevron-right"></i>
           </button>
         </form>
@@ -386,9 +413,14 @@ const QAPad = (props) => {
 
 const ContactPad = (props) => {
   const item = props.item;
+  const pressAlart = props.pressAlart;
   return (
     <div>
-      <div className="contact-text">{item}</div>
+      <div>
+        <a className="contact-text" onClick={() => pressAlart()}>
+          {item}
+        </a>
+      </div>
     </div>
   );
 };
