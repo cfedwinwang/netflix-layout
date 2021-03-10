@@ -2,7 +2,7 @@
   "name": "netflix_layout",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://cfedwinwang.github.io/netflix-layout/",
+  "homepage": "https://cfedwinwang.github.io/netflix-layout",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode development --watch",
@@ -27,7 +27,9 @@
     "style-loader": "^0.23.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.8"
+    "webpack-dev-server": ">=3.1.11",
+    "serialize-javascript": ">=3.1.0",
+    "yargs-parser": ">=13.1.2"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
