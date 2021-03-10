@@ -252,7 +252,7 @@ export default function APP() {
         <br />
         <br />
         <br />
-        <Landing landingPage={landingPage} />
+        <Landing landingPage={landingPage} pressAlart={pressAlart} />
       </div>
 
       {/* third part Q&A end */}
